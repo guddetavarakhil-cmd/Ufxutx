@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Personal Information</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    color: #222;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #101b50, #3457d5);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.container {
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px #00000010;
+}
+
+h2 {
+    color: #2446b5;
+    border-bottom: 2px solid #e1e7ff;
+    padding-bottom: 8px;
+}
+
+.detail {
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+    overflow-wrap: anywhere;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 15px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+button {
+    background: #2446b5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px 5px 5px 0;
+}
+
+button:hover {
+    background: #142b79;
+}
+
+#editSection {
+    display: none;
+}
+
+footer {
+    background: #101b50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media print {
+    #editSection, #editButton, #printButton {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .card {
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="headerName">Akhil</h1>
+    <p>My Personal Information</p>
+    <p>Polytechnic Student | Computer Science (CSC)</p>
+</header>
+
+<div class="container">
+
+    <section class="card">
+        <h2>Personal Details</h2>
+
+        <div class="detail">
+            <span class="label">Full Name:</span>
+            <span id="name">Akhil</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Date of Birth:</span>
+            <span id="dob">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Gender:</span>
+            <span id="gender">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Nationality:</span>
+            <span id="nationality">Indian</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Languages Known:</span>
+            <span id="languages">Telugu, English</span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Education Details</h2>
+
+        <div class="detail">
+            <span class="label">Qualification:</span>
+            Diploma / Polytechnic
+        </div>
+
+        <div class="detail">
+            <span class="label">Year of Study:</span>
+            First Year
+        </div>
+
+        <div class="detail">
+            <span class="label">Branch:</span>
+            Computer Science (CSC)
+        </div>
+
+        <div class="detail">
+            <span class="label">Curriculum:</span>
+            C26
+        </div>
+
+        <div class="detail">
+            <span class="label">College District:</span>
+            Ranga Reddy, Telangana
+        </div>
+
+        <div class="detail">
+            <span class="label">School Name:</span>
+            <span id="school">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">College Name:</span>
+            <span id="college">Not provided</span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Contact Details</h2>
+
+        <div class="detail">
+            <span class="label">Phone Number:</span>
+            <span id="phone">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Email Address:</span>
+            <span id="email">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">State:</span>
+            <span id="state">Telangana</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">District:</span>
+            <span id="district">Ranga Reddy</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Village / Town:</span>
+            <span id="village">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Address:</span>
+            <span id="address">Not provided</span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>My Skills and Interests</h2>
+
+        <div class="detail">
+            <span class="label">Technical Skills:</span>
+            <span id="skills">HTML, C Programming, Computer Fundamentals</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Hobbies:</span>
+            <span id="hobbies">Not provided</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Interests:</span>
+            <span id="interests">Coding, Web Development, Technology</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">Career Goal:</span>
+            <span id="goal">To become a skilled software developer.</span>
+        </div>
+
+        <div class="detail">
+            <span class="label">About Me:</span>
+            <span id="about">I am a first-year Polytechnic student studying Computer Science. I am interested in coding, web development and learning new technologies.</span>
+        </div>
+    </section>
+
+    <div style="text-align:center">
+        <button id="editButton" onclick="showEdit()">Edit My Information</button>
+        <button id="printButton" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <section class="card" id="editSection">
+        <h2>Edit Personal Information</h2>
+
+        <label>Full Name</label>
+        <input id="inName" value="Akhil">
+
+        <label>Date of Birth</label>
+        <input id="inDob" placeholder="DD-MM-YYYY">
+
+        <label>Gender</label>
+        <input id="inGender" placeholder="Enter gender">
+
+        <label>Nationality</label>
+        <input id="inNationality" value="Indian">
+
+        <label>Languages Known</label>
+        <input id="inLanguages" value="Telugu, English">
+
+        <label>School Name</label>
+        <input id="inSchool" placeholder="Enter school name">
+
+        <label>College Name</label>
+        <input id="inCollege" placeholder="Enter college name">
+
+        <label>Phone Number</label>
+        <input id="inPhone" type="tel" placeholder="Enter phone number">
+
+        <label>Email Address</label>
+        <input id="inEmail" type="email" placeholder="Enter email">
+
+        <label>State</label>
+        <input id="inState" value="Telangana">
+
+        <label>District</label>
+        <input id="inDistrict" value="Ranga Reddy">
+
+        <label>Village / Town</label>
+        <input id="inVillage" placeholder="Enter village or town">
+
+        <label>Full Address</label>
+        <textarea id="inAddress" placeholder="Enter address"></textarea>
+
+        <label>Technical Skills</label>
+        <input id="inSkills" value="HTML, C Programming, Computer Fundamentals">
+
+        <label>Hobbies</label>
+        <input id="inHobbies" placeholder="Enter hobbies">
+
+        <label>Interests</label>
+        <input id="inInterests" value="Coding, Web Development, Technology">
+
+        <label>Career Goal</label>
+        <input id="inGoal" value="To become a skilled software developer.">
+
+        <label>About Me</label>
+        <textarea id="inAbout">I am a first-year Polytechnic student studying Computer Science. I am interested in coding, web development and learning new technologies.</textarea>
+
+        <button onclick="saveProfile()">Update Information</button>
+        <button onclick="cancelEdit()">Cancel</button>
+    </section>
+
+</div>
+
+<footer>
+    <p>© <span id="footerYear"></span> <span id="footerName">Akhil</span></p>
+    <p>Personal Information Page</p>
+</footer>
+
+<script>
+const fields = [
+    ["name", "inName"],
+    ["dob", "inDob"],
+    ["gender", "inGender"],
+    ["nationality", "inNationality"],
+    ["languages", "inLanguages"],
+    ["school", "inSchool"],
+    ["college", "inCollege"],
+    ["phone", "inPhone"],
+    ["email", "inEmail"],
+    ["state", "inState"],
+    ["district", "inDistrict"],
+    ["village", "inVillage"],
+    ["address", "inAddress"],
+    ["skills", "inSkills"],
+    ["hobbies", "inHobbies"],
+    ["interests", "inInterests"],
+    ["goal", "inGoal"],
+    ["about", "inAbout"]
+];
+
+const defaults = {
+    name: "Akhil",
+    nationality: "Indian",
+    languages: "Telugu, English",
+    state: "Telangana",
+    district: "Ranga Reddy",
+    skills: "HTML, C Programming, Computer Fundamentals",
+    interests: "Coding, Web Development, Technology",
+    goal: "To become a skilled software developer.",
+    about: "I am a first-year Polytechnic student studying Computer Science. I am interested in coding, web development and learning new technologies."
+};
+
+function displayValue(value) {
+    return value.trim() || "Not provided";
+}
+
+function showEdit() {
+    document.getElementById("editSection").style.display = "block";
+    document.getElementById("editButton").style.display = "none";
+    document.getElementById("editSection").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function cancelEdit() {
+    document.getElementById("editSection").style.display = "none";
+    document.getElementById("editButton").style.display = "inline-block";
+}
+
+function saveProfile() {
+    const profile = {};
+
+    fields.forEach(([displayId, inputId]) => {
+        profile[displayId] =
+            document.getElementById(inputId).value.trim();
+    });
+
+    localStorage.setItem("myPersonalProfile", JSON.stringify(profile));
+
+    renderProfile(profile);
+
+    document.getElementById("editSection").style.display = "none";
+    document.getElementById("editButton").style.display = "none";
+
+    alert("Personal information updated successfully!");
+}
+
+function renderProfile(profile) {
+    fields.forEach(([displayId]) => {
+        document.getElementById(displayId).textContent =
+            displayValue(profile[displayId] || "");
+    });
+
+    document.getElementById("headerName").textContent =
+        profile.name || "Akhil";
+
+    document.getElementById("footerName").textContent =
+        profile.name || "Akhil";
+}
+
+function loadProfile() {
+    const saved = localStorage.getItem("myPersonalProfile");
+
+    if (saved) {
+        const profile = JSON.parse(saved);
+
+        fields.forEach(([displayId, inputId]) => {
+            document.getElementById(inputId).value =
+                profile[displayId] || "";
+        });
+
+        renderProfile(profile);
+
+        // After the first saved update, editing stays hidden.
+        document.getElementById("editButton").style.display = "none";
+        document.getElementById("editSection").style.display = "none";
+    } else {
+        renderProfile(defaults);
+    }
+}
+
+document.getElementById("footerYear").textContent =
+    new Date().getFullYear();
+
+loadProfile();
+</script>
+
+</body>
+</html>
